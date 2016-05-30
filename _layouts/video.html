@@ -1,0 +1,42 @@
+---
+layout: base
+--- 
+<section style="margin-left: 30px; margin-right: 30px; margin-top: 60px;">
+	<article style="float: left;">
+		<div class="container-fluid" style="background-color: antiquewhite; margin: auto">
+			<iframe src='http://www.youtube.com/embed/{{ page.youtube_id }}'
+					itemprop='embedUrl'
+					frameborder='0' style="width: 840px; height: 480px;"
+					allowfullscreen >
+			</iframe>
+			<div style="width: 800px">
+				<h2>{{ page.title }}</h2>
+				<p>{{ page.date | date: '%d %B %Y' }}</p>
+				<div>
+					{{ content }}
+				</div>
+			</div>
+		</div>
+		
+	</article>
+
+	<nav class="nav navbar-default" style="float: left; width: 32%">
+	{% assign videos = site.videos | reverse %}
+		  {% for video in videos | limit: 100 %}
+			<a href="{{ site.baseurl }}{{ video.url }}">
+				<div class="clearfix" style="margin: 8px;">
+				  <img src="http://img.youtube.com/vi/{{video.youtube_id}}/0.jpg" alt="Forest" class="pull-left" width="120px" height="90px">
+				  <p style="margin-left: 130px">{{ video.title }}</p>
+				  <time style="padding-left: 10px; color: darkviolet">{{ video.date | date: '%d %B %Y'}}</time>
+				</div>
+			</a>
+		  {% endfor %}
+		</div>
+	</nav>
+</section>
+
+<footer style="clear: both; padding: 18px; background-color: darkseagreen; text-align: center;">
+  All content copyright {{ site.name }} &copy; {{ site.time | date: '%Y' }} &bull; All rights reserved.
+</footer>
+
+

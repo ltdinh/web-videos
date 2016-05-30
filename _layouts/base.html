@@ -1,0 +1,18 @@
+---
+layout: compress
+---
+<!DOCTYPE html>
+<html>
+  {% include head.html %}
+  <body>
+		{% include header.html %}
+		{% include sidebar.html %}
+	 	{{ content }}
+ 		{% include ga.html %}
+ 		<!--<script src='{{ site.baseurl }}/assets/app.js'></script> -->
+		<!-- JQuery -->
+		<script href='{{ site.baseurl }}/assets/jquery-1.12.4.js'></script>
+		<!-- boostrap js -->
+		<script href='{{ site.baseurl }}/bootstrap-3.3.6/js/bootstrap.min.js'></script>
+	</body>
+</html>
